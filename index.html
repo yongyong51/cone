@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   /* 이서윤체 폰트 적용을 위한 코드 */
+   @font-face {
+        font-family: "LeeSeoyun";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff")
+          format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      body {
+	font-family: "LeeSeoyun";
+	margin: 0;
+	display: flex; /* 정렬은 가운데로*/
+	justify-content: center;
+	background-image: url("./background.png");
+    background-size: cover;
+}
+
+/* 너비는 390픽셀이구, 배경색이 좀 필요하고 부모(body) 높이 전체를 쓸거야 */
+
+.container {
+	width: 390px;
+	background-color: #ff9d73;
+	height: 100%;
+}
+
+/* 위로 여유가 30픽셀 정도 있었으면 좋겠네 */
+
+.photos {
+	margin-top: 30px;
+}
+
+/* 배경은 알아보기 쉽게 흰색으로 해주고, 좌우 마진은 20픽셀 */
+/* 상하 마진은 15픽셀로 해줘. 높이는 각 사진마다 200 픽셀로!*/
+
+.photos-frame {
+	background-color: white;
+	margin: 15px 20px;
+	height: 200px;
+
+    background-size: cover;
+}
+
+/* 아래 영역 전체는, flexible하게 하되 그 내부 아이템들은 세로로 쌓을거야 */
+/* 근데 모두 가운데 정렬 했으면 좋겠어! */
+.footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* 아래 영역의 제목 부분은 폰트가 좀 두껍고, 사이즈는 25픽셀! 흰색으로 */
+.f-title {
+	font-size: 25px;
+	font-weight: 900;
+	color: white;
+}
+
+/* 아래 영역의 날짜 부분은 폰트가 중간 두께고, 사이즈는 15픽셀! 흰색으로 */
+.f-date {
+	font-size: 15px;
+	font-weight: 500;
+	color: white;
+}
+
+#image1 {
+    background-image: url("/img1.png");
+}
+#image2 {
+    background-image: url("/img2.png");
+}
+#image3 {
+    background-image: url("/img3.png");
+}
+#image4 {
+    background-image: url("/img4.png");
+}
+
+.photo-description {
+	/* 배경은 검게, 글자는 흰 색으로 */
+	color: white;
+	background-color: black; 
+    /* 가로 너비는 내부 콘텐츠에 딱 맞게! */
+	width: fit-content;
+	padding: 0 20px;
+	margin-bottom: 10px;
+
+    border-radius: 10px;
+}
+
+.photos-frame {
+	position: relative;
+}
+
+.photo-description {
+  position: absolute; /*  */
+  bottom: 0;
+  transform: translate(-50%);
+  left: 50%;
+}
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="photos">
+        <div id="image1" class="photos-frame">
+            <span id="desc1" class="photo-description">첫 번째 이미지 설명</span>
+        </div>
+        <div id="image2" class="photos-frame">
+            <span id="desc2" class="photo-description">두 번째 이미지 설명</span>
+        </div>
+        <div id="image3" class="photos-frame">
+            <span id="desc3" class="photo-description">세 번째 이미지 설명</span>
+        </div>
+        <div id="image4" class="photos-frame">
+            <span id="desc1" class="photo-description">네 번째 이미지 설명</span>
+        </div>   
+    </div>
+    <div class="footer">
+    <p class="f-title">Happy Lunch Time</p>
+    <p class="f-date">2023.12.29</p>    
+    </div>
+</div>
+</body>
+</html>
